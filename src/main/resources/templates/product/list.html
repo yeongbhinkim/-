@@ -76,11 +76,19 @@
         </div>
         <div class="btn-grp">
           <button type="button" id="writeBtn">작성</button>
+          <div><input type="text" id="detailItemId"><button id="detailBtn">조회</button></div>
         </div>
     </div>
     </div>
 
     <script>
+    const $detailBtn = document.getElementById('detailBtn');
+     $detailBtn.addEventListener('click', ()=>{
+        const url = `/api/product/${detailItemId.value}/detail`;
+        location.href=url
+      });
+
+
       const $writeBtn = document.getElementById('writeBtn');
       $writeBtn.addEventListener('click', ()=>{
         const url = `/api/product`;
